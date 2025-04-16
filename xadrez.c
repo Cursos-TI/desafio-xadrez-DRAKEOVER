@@ -1,32 +1,95 @@
 #include <stdio.h>
-
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
-
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
-
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
-
-    return 0;
-}
+int main(){
+  //declaracao das variaveis
+  int escolha=0,movimento,peca,jogo;
+  //esquema para a repeticao do jogo dentro de dowhile
+do{
+  //coletando valor da variavel peca, oq vai indicar qual peça foi escolhida
+ printf("XADREZ\n\n  escolha uma peça:\n 1. RAINHA\n 2. TORRE\n 3. BISPO\n");
+ scanf("%d",&peca);
+ switch(peca){
+  //case da RAINHA
+  case 1:
+  //coleta os dado do movimento que sera realizada pela peça
+  printf("Você escolheu RAINHA, agora escolha o movimento\n");
+  printf("1. cima\n 2. baixo\n 3. direita\n 4. esquerda\n 5. cima direita\n 6. cima esquerda\n 7. baixo direita\n 8. baixo esquerda\n");
+    scanf("%d",&movimento);
+  //estrutura de repetição que realiza a quantidade de movimentos necessarios
+  for(escolha;escolha<1;escolha){
+      if(movimento==1){
+          escolha++;
+          printf("move-se para cima\n");
+      }else if(movimento==2){
+          escolha++;
+          printf("move-se para baixo\n");
+          escolha++;
+      }else if(movimento==3){
+          escolha++;
+          printf("move-se para direita\n");
+      }else if(movimento==4){
+          escolha++;
+          printf("move-se para esquerda\n");
+      }else if(movimento==5){
+          escolha++;
+          printf("move-se para cima e direita\n");
+      }else if(movimento==6){
+          escolha++;
+          printf("move-se para cima e esquerda\n");
+      }else if(movimento==7){
+          escolha++;
+          printf("move-se para baixo e direita\n");
+      }else if(movimento==8){
+          escolha++;
+          printf("move-se para baixo e esquerda\n");
+      }
+  }//estrutura 'for' desnecessaria usei só para completar o desafio
+  break;
+  //case TORRE
+  case 2:
+  //coleta os dado do movimento da peça
+  printf("Você escolheu TORRE, agora escolha o movimento\n");
+  printf("1. cima\n 2. baixo\n 3. direita\n 4. esquerda\n");
+    scanf("%d",&movimento);
+  //estrutura de repetição que imprimirá os movimentos feitos
+  while(escolha<8){
+      if(movimento==1){
+          escolha++;
+          printf("move-se para cima\n");
+      }else if(movimento==2){
+          escolha++;
+          printf("move-se para baixo\n");
+      }else if(movimento==3){
+          escolha++;
+          printf("move-se para direita\n");
+      }else if(movimento==4){
+          escolha++;
+          printf("move-se para esquerda\n");
+      }}
+  break;
+  //case BISPO
+  case 3:
+  //coleta de dado do movimento da peça
+  printf("Você escolheu BISPO, agora escolha o movimento\n");
+  printf("1. cima e direita\n 2. cima e esquerda\n 3. baixo e direita\n 4. baixo e esquerda\n");
+    scanf("%d",&movimento);
+  //estrutura dowhile de repetição para o imprimir o movimento que sera feito pela peça 
+  do{
+     if(movimento==1){
+      escolha++;
+      printf("move-se para cima e direita\n");
+  }else if(movimento==2){
+      escolha++;
+      printf("move-se para cima e esquerda\n");
+  }else if(movimento==3){
+      escolha++;
+      printf("move-se para baixo e direita\n");
+  }else if(movimento==4){
+      escolha++;
+      printf("move-se para baixo e esquerda\n");
+  }} while(escolha<5);
+  break;
+ }
+ jogo++;//atribui o valor a variavel 'jogo' que está contida no primeiro dowhile evitando loop infinito 
+}while(jogo<10);//do while que contém grande parte do código fonte
+return 0;
+}//fim do jogo
